@@ -10,6 +10,8 @@ export const useAppliedFormTop = () => {
     register,
     handleSubmit,
     formState: { errors },
+    trigger,
+    control,
   } = useForm<AppliedFormSchemaType>({
     resolver: zodResolver(appliedFormSchema),
   });
@@ -22,5 +24,7 @@ export const useAppliedFormTop = () => {
     register,
     onSubmit: handleSubmit(onSubmit),
     errors,
+    trigger,
+    control,
   };
 };
