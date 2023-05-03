@@ -9,7 +9,7 @@ import {
   CheckboxGroup,
   Checkbox,
 } from "@chakra-ui/react";
-import { useAppliedFormTop } from "../hooks";
+import { useAppliedFormTop } from "@/features/applied-form/hooks";
 import { Controller } from "react-hook-form";
 
 const foods = ["寿司", "カレー", "ピザ", "その他"];

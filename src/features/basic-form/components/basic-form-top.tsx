@@ -7,7 +7,7 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
-import { useBasicFormTop } from "../hooks";
+import { useBasicFormTop } from "@/features/basic-form/hooks";
 
 export const BasicFormTop = () => {
   const { register, onSubmit, errors } = useBasicFormTop();
