@@ -13,7 +13,7 @@ export const appliedFormSchema = z
     foods: z.array(z.string()),
     other: z.string().nullable(),
   })
-  .refine((data) => !data.foods.includes("その他") || !!data.other, {
+  .refine((data) => !data.foods.includes("other") || !!data.other, {
     message: "その他の好きな食べ物を入力してください",
     path: ["other"],
   });

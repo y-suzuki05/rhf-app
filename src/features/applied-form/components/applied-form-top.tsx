@@ -12,7 +12,24 @@ import {
 import { useAppliedFormTop } from "@/features/applied-form/hooks";
 import { Controller } from "react-hook-form";
 
-const foods = ["寿司", "カレー", "ピザ", "その他"];
+const foods = [
+  {
+    id: "sushi",
+    label: "寿司",
+  },
+  {
+    id: "curry",
+    label: "カレー",
+  },
+  {
+    id: "pizza",
+    label: "ピザ",
+  },
+  {
+    id: "other",
+    label: "その他",
+  },
+];
 
 export const AppliedFormTop = () => {
   const { register, onSubmit, errors, trigger, control } = useAppliedFormTop();
@@ -53,13 +70,14 @@ export const AppliedFormTop = () => {
           <Controller
             name="foods"
             control={control}
+            defaultValue={[]}
             render={({ field }) => {
               return (
                 <CheckboxGroup {...field}>
                   {foods.map((food) => {
                     return (
-                      <Checkbox key={food} value={food} mr={8}>
-                        {food}
+                      <Checkbox key={food.id} value={food.id} mr={8}>
+                        {food.label}
                       </Checkbox>
                     );
                   })}
